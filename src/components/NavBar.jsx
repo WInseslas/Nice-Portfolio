@@ -1,30 +1,46 @@
 import React from 'react'
+import NavLinks from "./NavLinks"
 
 export default function NavBar() {
+
+	const links = [
+		{
+			id: 1,
+			path: "about",
+			name: "about",
+		},
+		{
+			id: 2,
+			path: "resume",
+			name: "resume",
+		},
+		{
+			id: 3,
+			path: "portfolio",
+			name: "portfolio",
+		},
+		{
+			id: 4,
+			path: "blog",
+			name: "blog",
+		},
+		{
+			id: 5,
+			path: "contact",
+			name: "contact",
+		},
+		
+	]
 
 	return (
 		<nav className="navbar">
 			<ul className="navbar-list">
 
-				<li className="navbar-item">
-					<button className="navbar-link  active" data-nav-link>About</button>
-				</li>
-
-				<li className="navbar-item">
-					<button className="navbar-link" data-nav-link>Resume</button>
-				</li>
-
-				<li className="navbar-item">
-					<button className="navbar-link" data-nav-link>Portfolio</button>
-				</li>
-
-				<li className="navbar-item">
-					<button className="navbar-link" data-nav-link>Blog</button>
-				</li>
-
-				<li className="navbar-item">
-					<button className="navbar-link" data-nav-link>Contact</button>
-				</li>
+				{(links.map((link) => (
+					<li className="navbar-item" key={link.id}>
+						<NavLinks link={link} />
+					</li>
+				)))}
 
 			</ul>
 

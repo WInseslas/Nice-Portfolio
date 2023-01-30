@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function About() {
+export default function About(className="about") {
     return (
-        <article className="about  active" name="about">
+        <article>
 
             <header>
                 <h2 className="h2 article-title">About me</h2>
@@ -35,9 +35,7 @@ export default function About() {
                     <li className="service-item">
 
                         <div className="service-icon-box">
-
-                            <img src={require('../assets/images/icon-design.svg')} alt="Web design icon" width={40} />
-                            
+                            <img src="https://raw.githubusercontent.com/WInseslas/Nice-Portfolio/0ff920b2776dbb9aa0178f5c187f78caf91565b9/src/assets/images/icon-design.svg" alt="Web design icon" width={40} />
                         </div>
 
                         <div className="service-content-box">
@@ -51,9 +49,8 @@ export default function About() {
                     </li>
 
                     <li className="service-item">
-
                         <div className="service-icon-box">
-                            <img src="../assets/images/icon-dev.svg" alt="Web development icon" width="40" />
+                            <img src="https://raw.githubusercontent.com/WInseslas/Nice-Portfolio/0ff920b2776dbb9aa0178f5c187f78caf91565b9/src/assets/images/icon-dev.svg" alt="Web development icon" width="40" />
                         </div>
 
                         <div className="service-content-box">
@@ -69,7 +66,7 @@ export default function About() {
                     <li className="service-item">
 
                         <div className="service-icon-box">
-                            <img src="../assets/images/icon-app.svg" alt="mobile app icon" width="40" />
+                            <img src="https://raw.githubusercontent.com/WInseslas/Nice-Portfolio/0ff920b2776dbb9aa0178f5c187f78caf91565b9/src/assets/images/icon-app.svg" alt="mobile app icon" width="40" />
                         </div>
 
                         <div className="service-content-box">
@@ -85,7 +82,7 @@ export default function About() {
                     <li className="service-item">
 
                         <div className="service-icon-box">
-                            <img src="../assets/images/icon-photo.svg" alt="camera icon" width="40" />
+                            <img src="https://raw.githubusercontent.com/WInseslas/Nice-Portfolio/0ff920b2776dbb9aa0178f5c187f78caf91565b9/src/assets/images/icon-photo.svg" alt="camera icon" width="40" />
                         </div>
 
                         <div className="service-content-box">
@@ -114,7 +111,7 @@ export default function About() {
                         <div className="content-card" data-testimonials-item>
 
                             <figure className="testimonials-avatar-box">
-                                <img src="../assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar />
+                                <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-1.png?raw=true" alt="Daniel lewis" width="60" data-testimonials-avatar />
                             </figure>
 
                             <h4 className="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
@@ -136,7 +133,7 @@ export default function About() {
                         <div className="content-card" data-testimonials-item>
 
                             <figure className="testimonials-avatar-box">
-                                <img src="../assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar />
+                                <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-2.png?raw=true" alt="Jessica miller" width="60" data-testimonials-avatar />
                             </figure>
 
                             <h4 className="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
@@ -158,7 +155,7 @@ export default function About() {
                         <div className="content-card" data-testimonials-item>
 
                             <figure className="testimonials-avatar-box">
-                                <img src="../assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar />
+                                <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-3.png?raw=true" alt="Emily evans" width="60" data-testimonials-avatar />
                             </figure>
 
                             <h4 className="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
@@ -180,7 +177,7 @@ export default function About() {
                         <div className="content-card" data-testimonials-item>
 
                             <figure className="testimonials-avatar-box">
-                                <img src="../assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar />
+                                <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-4.png?raw=true" alt="Henry william" width="60" data-testimonials-avatar />
                             </figure>
 
                             <h4 className="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
@@ -216,10 +213,10 @@ export default function About() {
 
                     <div className="modal-img-wrapper">
                         <figure className="modal-avatar-box">
-                            <img src="../assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-1.png?raw=true" alt="Daniel lewis" width="80" data-modal-img />
                         </figure>
 
-                        <img src="../assets/images/icon-quote.svg" alt="quote icon" />
+                        <img src="https://raw.githubusercontent.com/WInseslas/Nice-Portfolio/0ff920b2776dbb9aa0178f5c187f78caf91565b9/src/assets/images/icon-quote.svg" alt="quote icon" />
                     </div>
 
                     <div className="modal-content">
@@ -254,37 +251,37 @@ export default function About() {
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="../assets/images/logo-1-color.png" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-1-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="../assets/images/logo-2-color.png" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-2-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="../assets/images/logo-3-color.png" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-3-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="../assets/images/logo-4-color.png" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-4-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="../assets/images/logo-5-color.png" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-5-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="../assets/images/logo-6-color.png" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-6-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 

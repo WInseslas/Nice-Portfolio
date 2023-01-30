@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Resume() {
+export default function Resume( className ) {
     return (
-        <article className="resume" data-page="resume">
+        <article>
             <header>
                 <h2 className="h2 article-title">Resume</h2>
             </header>
