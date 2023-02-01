@@ -1,49 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import NavLinks from "./NavLinks"
+import {linksItems} from '../helpers/navbarData'
 
 export default function NavBar() {
-
-	const links = [
-		{
-			id: 1,
-			path: "about",
-			name: "about",
-		},
-		{
-			id: 2,
-			path: "resume",
-			name: "resume",
-		},
-		{
-			id: 3,
-			path: "portfolio",
-			name: "portfolio",
-		},
-		{
-			id: 4,
-			path: "blog",
-			name: "blog",
-		},
-		{
-			id: 5,
-			path: "contact",
-			name: "contact",
-		},
-		
-	]
-
+	const [current, setCurrent] = useState(1)
 	return (
 		<nav className="navbar">
 			<ul className="navbar-list">
 
-				{(links.map((link) => (
-					<li className="navbar-item" key={link.id}>
-						<NavLinks link={link} />
+				{(linksItems.map((link) => (
+					<li className="navbar-item" key={link.id} onClick={() => setCurrent(link.id)}>
+						<NavLinks link={link} current={current}/>
 					</li>
 				)))}
-
 			</ul>
-
 		</nav>
 	)
 }

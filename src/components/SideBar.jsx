@@ -1,94 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { FaGithub, FaTwitter, FaLinkedinIn, FaChevronDown, FaPhone, FaEnvelope, FaMapMarked, FaCalendarCheck } from 'react-icons/fa'
+import { FaChevronDown } from 'react-icons/fa'
+import { socialLinksItems, contactItems } from '../helpers/aboutData';
 
 
 
 export default function SideBar() {
 
-	const socialLinks = [
-		{
-			id: 1,
-			icon: <FaGithub />,
-			path: "https://github.com/WInseslas",
-		},
-		{
-			id: 2,
-			icon: <FaTwitter />,
-			path: "https://twitter.com/",
-		},
-		{
-			id: 3,
-			icon: <FaLinkedinIn />,
-			path: "https://www.linkedin.com/",
-		},
-	];
-
-	const links = [
-		{
-			id: 1,
-			child: (
-				<>
-					<div className="icon-box">
-						<FaEnvelope />
-					</div>
-
-					<div className="contact-info">
-						<p className="contact-title">Email</p>
-						<a href="mailto:eyebejoel55@gmail.com" className="contact-link">eyebejoel55@gmail.com</a>
-					</div>
-				</>
-			)
-		},
-		{
-			id: 2,
-			child: (
-				<>
-					<div className="icon-box">
-						<FaPhone />
-					</div>
-
-					<div className="contact-info">
-						<p className="contact-title">Phone</p>
-						<a href="tel:+237672445181" className="contact-link">+237 672445181</a>
-					</div>
-				</>
-			)
-		},
-		{
-			id: 3,
-			child: (
-				<>
-					<div className="icon-box">
-						<FaCalendarCheck />
-					</div>
-
-					<div className="contact-info">
-						<p className="contact-title">Birthday</p>
-						<time dateTime="2002-08-08">August 08, 2002</time>
-					</div>
-				</>
-			)
-		},
-		{
-			id: 4,
-			child: (
-				<>
-					<div className="icon-box">
-						<FaMapMarked />
-					</div>
-
-					<div className="contact-info">
-						<p className="contact-title">Location</p>
-						<address>Dang, Ngaoundéré, Cameroon</address>
-					</div>
-				</>
-			)
-		}
-
-	]
-
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [active, setActive] = useState(false);
+
+	const handleClick = () => {
+		setActive(!active);
+	};
 
 	useEffect(() => {
 		const handleWindowResize = () => setWindowWidth(window.innerWidth);
@@ -104,18 +28,14 @@ export default function SideBar() {
 		};
 	}, []);
 
+	
+
 	let borderRadius;
 	if (windowWidth < 1115 && windowWidth >= 580) {
 		borderRadius = { borderRadius: 20 }
 	} else {
 		borderRadius = { borderRadius: 10 }
 	}
-
-	const [active, setActive] = useState(false);
-
-	const handleClick = () => {
-		setActive(!active);
-	};
 
 	let submenu;
 	if (active) {
@@ -125,7 +45,7 @@ export default function SideBar() {
 	}
 
 	return (
-		<aside onClick={ handleClick } className={submenu} data-sidebar>
+		<aside onClick={ handleClick } className={submenu} >
 			<div className="sidebar-info">
 				<figure className="avatar-box">
 					<img style={borderRadius}
@@ -137,11 +57,11 @@ export default function SideBar() {
 					<p className="title">Web developer</p>
 				</div>
 
-				<button className="info_more-btn" data-sidebar-btn>
+				<button className="info_more-btn">
 					<span>Show Contacts</span>
 
 					<div style={{ display: windowWidth > 576 ? 'none' : 'block' }}>
-						<FaChevronDown />
+						<FaChevronDown className='icon-icon' />
 					</div>
 
 				</button>
@@ -150,7 +70,7 @@ export default function SideBar() {
 			<div className="sidebar-info_more">
 				<div className="separator"></div>
 				<ul className="contacts-list">
-					{( links.map( link => (
+					{( contactItems.map( link => (
 						<li key={link.id} className="contact-item">
 							{link.child}
 						</li>
@@ -160,12 +80,11 @@ export default function SideBar() {
 				<div className="separator"></div>
 
 				<ul className="social-list">
-					{(socialLinks.map(link => (
+					{(socialLinksItems.map(link => (
 						<li key={link.id} className="social-item">
 							<a className='social-link' href={link.path} target="_blank" rel="noreferrer" >{link.icon}</a>
 						</li>
 					)))}
-
 				</ul>
 
 			</div>

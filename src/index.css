@@ -1,11 +1,4 @@
 :root {
-
-  /**
-   * colors
-   */
-
-  /* gradient */
-
   --bg-gradient-onyx: linear-gradient(to bottom right,
       hsl(240, 1%, 25%) 3%,
       hsl(0, 0%, 19%) 97%);
@@ -25,8 +18,6 @@
       hsl(45, 100%, 72%),
       hsl(35, 100%, 68%));
 
-  /* solid */
-
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
@@ -40,14 +31,9 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
-  /**
-   * typography
-   */
 
-  /* font-family */
   --ff-poppins: 'Poppins', sans-serif;
 
-  /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -57,15 +43,10 @@
   --fs-7: 13px;
   --fs-8: 11px;
 
-  /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-
-  /**
-   * shadow
-   */
 
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
@@ -73,22 +54,10 @@
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-  /**
-   * transition
-   */
-
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
 
 *,
 *::before,
@@ -107,7 +76,7 @@ li {
 }
 
 img,
-ion-icon,
+.ion-icon,
 a,
 button,
 time,
@@ -147,14 +116,6 @@ html {
 body {
   background: var(--smoky-black);
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
 
 .sidebar,
 article {
@@ -197,7 +158,7 @@ article {
   z-index: -1;
 }
 
-.icon-box ion-icon {
+.icon-box .ion-icon {
   --ionicon-stroke-width: 35px;
 }
 
@@ -302,27 +263,11 @@ article.active {
   z-index: -1;
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #MAIN
-\*-----------------------------------*/
-
 main {
   margin: 15px 12px;
   margin-bottom: 75px;
   min-width: 259px;
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #SIDEBAR
-\*-----------------------------------*/
 
 .sidebar {
   margin-bottom: 15px;
@@ -468,14 +413,6 @@ main {
   color: var(--light-gray);
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #NAVBAR
-\*-----------------------------------*/
-
 .navbar {
   position: fixed;
   bottom: 0;
@@ -513,14 +450,6 @@ main {
   color: var(--orange-yellow-crayola);
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #ABOUT
-\*-----------------------------------*/
-
 .about .article-title {
   margin-bottom: 15px;
 }
@@ -535,12 +464,6 @@ main {
 .about-text p {
   margin-bottom: 15px;
 }
-
-
-
-/**
- * #service 
- */
 
 .service {
   margin-bottom: 35px;
@@ -745,7 +668,7 @@ main {
   opacity: 1;
 }
 
-.modal-close-btn ion-icon {
+.modal-close-btn .ion-icon {
   --ionicon-stroke-width: 50px;
 }
 
@@ -818,22 +741,9 @@ main {
   filter: grayscale(0);
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #RESUME
-\*-----------------------------------*/
-
 .article-title {
   margin-bottom: 30px;
 }
-
-
-/**
- * education and experience 
- */
 
 .timeline {
   margin-bottom: 30px;
@@ -942,14 +852,6 @@ main {
   height: 100%;
   border-radius: inherit;
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #PORTFOLIO
-\*-----------------------------------*/
 
 .filter-list {
   display: none;
@@ -1091,7 +993,7 @@ main {
   opacity: 1;
 }
 
-.project-item-icon-box ion-icon {
+.project-item-icon-box .ion-icon {
   --ionicon-stroke-width: 50px;
 }
 
@@ -1124,14 +1026,6 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
 
 .blog-posts {
   margin-bottom: 10px;
@@ -1220,14 +1114,6 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #CONTACT
-\*-----------------------------------*/
 
 .mapbox {
   position: relative;
@@ -1327,7 +1213,7 @@ textarea.form-input::-webkit-resizer {
   transition: var(--transition-1);
 }
 
-.form-btn ion-icon {
+.form-btn .ion-icon {
   font-size: 16px;
 }
 
@@ -1351,14 +1237,6 @@ textarea.form-input::-webkit-resizer {
 .form-btn:disabled:hover::before {
   background: var(--bg-gradient-jet);
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #RESPONSIVE
-\*-----------------------------------*/
 
 /**
  * responsive larger than 450px screen
@@ -1504,7 +1382,7 @@ textarea.form-input::-webkit-resizer {
     font-size: var(--fs-8);
   }
 
-  .info_more-btn ion-icon {
+  .info_more-btn .ion-icon {
     display: none;
   }
 
@@ -1730,7 +1608,7 @@ textarea.form-input::-webkit-resizer {
     padding: 16px 20px;
   }
 
-  .form-btn ion-icon {
+  .form-btn .ion-icon {
     font-size: 18px;
   }
 

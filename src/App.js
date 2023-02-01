@@ -7,7 +7,6 @@ import Portfolio from "./components/Portfolio";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './scripts/index';
 
 function App() {
 	return (
@@ -18,10 +17,11 @@ function App() {
 
 				<Routes>
 					<Route path="/about" element={<About />} />
-					<Route path="/resume" element={<Resume className="resume active" />} />
+					<Route path="/resume" element={<Resume />} />
 					<Route path='/portfolio' element={<Portfolio />} />
 					<Route path='/blog' element={<Blog />} />
 					<Route path='/contact' element={<Contact />} />
+					<Route path='/*' element={<About />} />
 				</Routes>
 			</div>
 		</main>
