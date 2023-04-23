@@ -23,25 +23,25 @@ export default function About() {
         {
             id: 1,
             title: "Daniel lewis",
-            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-1.png?raw=true",
+            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/avatar-1.png?raw=true",
             describe: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
         },
         {
             id: 2,
             title: "Jessica miller",
-            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-2.png?raw=true",
+            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/avatar-2.png?raw=true",
             describe: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
         },
         {
             id: 3,
             title: "Emily evans",
-            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-3.png?raw=true",
+            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/avatar-3.png?raw=true",
             describe: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
         },
         {
             id: 4,
             title: "Henry William",
-            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/avatar-4.png?raw=true",
+            src: "https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/avatar-4.png?raw=true",
             describe: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
         }
     ]
@@ -209,37 +209,37 @@ export default function About() {
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-1-color.png?raw=true" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/logo-1-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-2-color.png?raw=true" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/logo-2-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-3-color.png?raw=true" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/logo-3-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-4-color.png?raw=true" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/logo-4-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-5-color.png?raw=true" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/logo-5-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 
                     <li className="clients-item">
                         <a href="/">
-                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/src/assets/images/logo-6-color.png?raw=true" alt="client logo" />
+                            <img src="https://github.com/WInseslas/Nice-Portfolio/blob/main/front-end/src/assets/images/logo-6-color.png?raw=true" alt="client logo" />
                         </a>
                     </li>
 

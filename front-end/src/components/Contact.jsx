@@ -6,7 +6,10 @@ export default function Contact() {
 	const [fullname, setFullname] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
+	const [subject, setSubject] = useState('');
 	const [errorMessage, setErrorMessage] = useState('');
+	const [successMessage, setSuccessMessage] = useState('')
+
 
 	const handleFullnameChange = (event) => {
 		setFullname(event.target.value);
@@ -20,7 +23,11 @@ export default function Contact() {
 		setMessage(event.target.value);
 	};
 
-	const handleSubmit = (event) => {
+	const handleSubjectChange = (event) => {
+		setSubject(event.target.value);
+	}
+
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 
 		if (!fullname || !email || !message) {
@@ -32,11 +39,47 @@ export default function Contact() {
 			setErrorMessage('Please enter a valid email address');
 			return;
 		}
-		
-		// handle form submission logic here
-	};
+		try {
+			const response = await fetch('http://127.0.0.1:3030/api/message/create', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					name: fullname,
+					email: email,
+					subject: subject,
+					message: message
+				})
+			});
 
+			const responseJson = await response.json();
 
+			if (!response.ok) {
+				console.log(responseJson.data.message)
+				if (response.status === 400) {
+					throw new Error(responseJson.message);
+				} else if (response.status === 404) {
+					throw new Error(responseJson.message);
+				} else if (response.status === 500) {
+					throw new Error(responseJson.message);
+				} else {
+					throw new Error('Login failed');
+				}
+			} else if (response.status === 201) {
+				setEmail("")
+				setFullname("")
+				setEmail("")
+				setSubject("")
+				setMessage("")
+				setSuccessMessage("Thank you very much for your message! We have received your request and will respond as soon as possible.")
+			} else {
+				throw new Error('An error has occurred');
+			}
+		} catch (error) {
+			setErrorMessage(error.message);
+		}
+	}
 	return (
 		<article className="active">
 			<header>
@@ -50,7 +93,7 @@ export default function Contact() {
 						width="600"
 						height="300"
 						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"
+						referrerPolicy="no-referrer-when-downgrade"
 					></iframe>
 				</figure>
 			</section>
@@ -80,6 +123,17 @@ export default function Contact() {
 						/>
 					</div>
 
+					<input
+						style={{ marginBottom: "20px" }}
+						name="subject"
+						className="form-input"
+						placeholder="Subject"
+						required
+						value={subject}
+						onChange={handleSubjectChange}
+					/>
+
+
 					<textarea
 						name="message"
 						className="form-input"
@@ -89,8 +143,8 @@ export default function Contact() {
 						onChange={handleMessageChange}
 					></textarea>
 
-					{errorMessage && <p className="error-msg">{errorMessage}</p>}
-
+					{errorMessage && <p style={{ textAlign: "center", marginBottom: "20px", color: "red" }}>{errorMessage}</p>}
+					{successMessage && <p style={{ textAlign: "center", marginBottom: "20px", color: "green" }} >{successMessage}</p>}
 					<button className="form-btn" type="submit">
 						<TbSend className="ion-icon" />
 						<span>Send Message</span>

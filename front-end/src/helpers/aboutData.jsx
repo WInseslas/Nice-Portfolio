@@ -28,7 +28,7 @@ export const contactItems = [
 
                 <div className="contact-info">
                     <p className="contact-title">Email</p>
-                    <a href="mailto:eyebejoel55@gmail.com" className="contact-link">eyebejoel55@gmail.com</a>
+                    <a href="mailto:johndoe@winseslas.com" className="contact-link">johndoe@winseslas.com</a>
                 </div>
             </>
         )

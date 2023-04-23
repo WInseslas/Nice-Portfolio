@@ -49,11 +49,11 @@ export default function SideBar() {
 			<div className="sidebar-info">
 				<figure className="avatar-box">
 					<img style={borderRadius}
-						src="https://lh3.googleusercontent.com/a/AEdFTp7zCQm2neWscud86IMi_6m6jCEHoFV3ZtxU7Papng=s288-p-rw-no" alt="Eyebe Eloundou Joel Cedric" width="60" />
+						src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_960_720.png" alt="John Doe" width="60" />
 				</figure>
 
 				<div className="info-content">
-					<h1 className="name" title="Eyebe Eloundou Joel Cedric">Eyebe Eloundou <br />Joel Cedric</h1>
+					<h1 className="name" title="John Doe">John Doe<br /></h1>
 					<p className="title">Web developer</p>
 				</div>
 
