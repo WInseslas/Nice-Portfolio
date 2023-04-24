@@ -43,7 +43,7 @@ export default function Login() {
                         console.log(response);
                         throw new Error('Invalid email or password');
                     } else if (response.status === 404) {
-                        throw new Error('Not found');
+                        throw new Error('Invalid email or password');
                     } else if (response.status === 500) {
                         throw new Error('An error has occurred. Please try again in a few moments.');
                     } else {
@@ -71,7 +71,7 @@ export default function Login() {
             text: 'You must login to access this page.',
             timer: 5000
         }).then(() => {
-          window.history.replaceState(null, null, window.location.pathname);
+            window.history.replaceState(null, null, window.location.pathname);
         });
     }
 
@@ -82,7 +82,7 @@ export default function Login() {
             text: 'You have successfully logged out.',
             timer: 5000
         }).then(() => {
-          window.history.replaceState(null, null, window.location.pathname);
+            window.history.replaceState(null, null, window.location.pathname);
         });
     }
 

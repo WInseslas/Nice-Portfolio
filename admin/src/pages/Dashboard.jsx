@@ -1,17 +1,18 @@
+
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
-import LogoutModal from '../components/LogoutModal';
-import isAuthenticated from '../utils/isAuthenticated'
+import Sidebar from '../components/partials/Sidebar';
+import Navbar from '../components/partials/Navbar';
+import Footer from '../components/partials/Footer';
+import ScrollToTop from '../components/partials/ScrollToTop';
+import LogoutModal from '../components/partials/LogoutModal';
+import isAuthenticated from '../utils/isAuthenticated';
 import Swal from 'sweetalert2';
+import useFetch from '../hooks/useFetch';
 
 export default function Dashboard() {
-
   const [messages, setMessages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true)
-  const [currentUser, setCurrentUser] = useState(null)
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState(null);
   const params = new URLSearchParams(window.location.search);
   const connect = params.get('connect');
 
@@ -19,7 +20,6 @@ export default function Dashboard() {
     if (!isAuthenticated()) {
       window.location.href = '/?error=connect';
     } else {
-      setCurrentUser(JSON.parse(localStorage.getItem('user')))
       const welcomeAlert = () => {
         Swal.fire({
           title: 'Welcome!',
@@ -33,31 +33,33 @@ export default function Dashboard() {
       };
 
       if (connect === "success") {
-        welcomeAlert()
+        welcomeAlert();
       }
-
-      // Récupérer les messages depuis l'API
-      fetch('http://127.0.0.1:3030/api/message/getUnreadMessages', {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Bearer ' + localStorage.getItem('token')
-        },
-      })
-        .then(response => {
-          if (!response.status === 200) {
-            throw Error("An error has occurred.")
-          }
-          return response.json()
-        })
-        .then(data => {
-          setIsLoading(false)
-          setMessages(data.data)
-        })
-        .catch(error => {
-          console.log(error)
-        });
     }
-  }, []);
+    const user = JSON.parse(localStorage.getItem('user'));
+    setCurrentUser(user);
+  }, [connect]);
+  
+  const token = localStorage.getItem('token');
+  const apiUrl = 'http://127.0.0.1:3030/api/message/getUnreadMessages';
+  const options = {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + token
+    },
+  };
+  const [data, isLoadingData] = useFetch({ url: apiUrl, options: options });
+
+  // console.log(data)
+  useEffect(() => {
+    if (data) {
+      setMessages(data.data);
+    }
+
+    if (!isLoadingData) {
+      setIsLoading(false);
+    }
+  }, [data, isLoadingData]);
 
   return (
     <div id='page-top'>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import formatDate from "../utils/formatDate";
+import formatDate from "../../utils/formatDate";
 
 export default function Navbar({ messages, isLoading, user }) {
     return (

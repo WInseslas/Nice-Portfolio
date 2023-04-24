@@ -28,7 +28,7 @@ app
 //     .use('/api/comment', commentRoutes)
 
 app.get('/', (req, res) => {
-    res.json("Hello, Heroku ! ");
+    res.json({ message: "Hello, Heroku ! " });
 });
 // Server
 app.listen(process.env.port || process.env.PORT, () => {
