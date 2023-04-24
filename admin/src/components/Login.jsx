@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
-export default function Login(props) {
+export default function Login() {
 
-    // const { error } = props.location.state || { error: null }; 
+    const params = new URLSearchParams(window.location.search);
+    const error = params.get('error');
+    const logout = params.get('logout');
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -49,17 +52,39 @@ export default function Login(props) {
                 }
 
                 const data = await response.json();
-                console.log(data)
                 // Rediriger l'utilisateur vers la page d'accueil
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('user', data.data);
-                window.location.href = '/Dashboard';
+                localStorage.setItem('user', JSON.stringify(data.data));
+
+                window.location.href = '/Dashboard?connect=success';
 
             } catch (error) {
                 setErrorMsg(error.message);
             }
         }
     };
+
+    if (error === 'connect') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'You must login to access this page.',
+            timer: 5000
+        }).then(() => {
+          window.history.replaceState(null, null, window.location.pathname);
+        });
+    }
+
+    if (logout === "success") {
+        Swal.fire({
+            icon: 'success',
+            title: 'Logged out',
+            text: 'You have successfully logged out.',
+            timer: 5000
+        }).then(() => {
+          window.history.replaceState(null, null, window.location.pathname);
+        });
+    }
 
     return (
         <div className="bg-gradient-dark">
@@ -124,7 +149,6 @@ export default function Login(props) {
                                                 </div>
                                             )}
                                             <br />
-                                            {/* {error && <p style={{marginBottom: "20px", color: 'red' }}>{decodeURI(error)}</p>}    */}
                                             <br />
                                         </div>
                                     </div>

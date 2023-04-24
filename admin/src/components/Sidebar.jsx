@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
-export default function Sidebar() {
-  console.log('Sidebar')
+export default function Sidebar({user}) {
+  // console.log('Sidebar')
   return (
     <>
       <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -11,7 +11,7 @@ export default function Sidebar() {
           <div className="sidebar-brand-icon rotate-n-15">
             <i className="fas fa-laugh-wink"></i>
           </div>
-          <div className="sidebar-brand-text mx-3">John Doe </div>
+          <div className="sidebar-brand-text mx-3">{user ? user.firstname : ""} {user ? user.secondName : ""} </div>
         </a>
 
         <hr className="sidebar-divider my-0" />

@@ -31,7 +31,6 @@ module.exports.signUp = async (req, res) => {
 }
 
 module.exports.signIn = async (req, res) => {
-    // console.log(req.body)
     user.findOne({ where: { email: req.body.email}}, {attributes: {exclude: ['password']}})
         .then(user => {
             if (!user) {
@@ -68,10 +67,10 @@ module.exports.logout = async (req, res) => {
     if (req.headers.authorization != null) {
         req.headers.authorization = null;
         const message = `Logout`;
-        res.json({ message, data: req.headers.authorization });
+        res.status(200).json({ message, data: req.headers.authorization });
     } else {
         const message = `You are not connected so you cannot log out`;
-        res.json({ message });
+        res.status(401).json({ message });
     }
-    
 }
+

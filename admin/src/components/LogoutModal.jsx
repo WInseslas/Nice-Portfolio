@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import Logout from './Logout'
+
 
 export default function LogoutModal() {
     return (
@@ -16,7 +18,7 @@ export default function LogoutModal() {
                     <div className="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div className="modal-footer">
                         <button className="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a className="btn btn-danger" href="/">Logout</a>
+                        <Logout />
                     </div>
                 </div>
             </div>
