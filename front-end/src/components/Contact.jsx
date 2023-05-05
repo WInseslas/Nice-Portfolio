@@ -145,7 +145,9 @@ export default function Contact() {
 
 					{errorMessage && <p style={{ textAlign: "center", marginBottom: "20px", color: "red" }}>{errorMessage}</p>}
 					{successMessage && <p style={{ textAlign: "center", marginBottom: "20px", color: "green" }} >{successMessage}</p>}
-					<button className="form-btn" type="submit">
+					<button className="form-btn"
+						type="submit"
+						disabled={!fullname || !email || !subject || !message}>
 						<TbSend className="ion-icon" />
 						<span>Send Message</span>
 					</button>

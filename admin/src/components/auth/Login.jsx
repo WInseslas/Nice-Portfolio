@@ -14,10 +14,12 @@ export default function Login() {
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
+        setErrorMsg(null);
     };
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
+        setErrorMsg(null);
     };
 
     const handleSubmit = async (e) => {
@@ -98,7 +100,6 @@ export default function Login() {
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="p-5">
-                                            <br /><br />
                                             <div className="text-center">
                                                 <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                             </div>
@@ -127,6 +128,22 @@ export default function Login() {
                                                     />
                                                 </div>
 
+                                                <div className="form-group">
+                                                    <div className="custom-control custom-checkbox small">
+                                                        <input type="checkbox" className="custom-control-input" id="customCheck" />
+                                                        <label className="custom-control-label" htmlFor="customCheck">Remember Me</label>
+                                                    </div>
+                                                </div>
+
+                                                {errorMsg && (
+                                                    <>
+                                                        <div style={{ textAlign: "center", color: "Red" }} role="alert">
+                                                            {errorMsg}
+                                                        </div>
+                                                        <br />
+                                                    </>
+                                                )}
+
                                                 <button
                                                     type="submit"
                                                     className="btn btn-primary btn-user btn-block"
@@ -134,6 +151,14 @@ export default function Login() {
                                                 >
                                                     Login
                                                 </button>
+
+                                                <hr />
+                                                <a href="#" className="btn btn-google btn-user btn-block">
+                                                    <i className="fab fa-google fa-fw"></i> Login with Google
+                                                </a>
+                                                <a href="#" className="btn btn-facebook btn-user btn-block">
+                                                    <i className="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                                                </a>
                                             </form>
                                             <hr />
                                             <div className="text-center">
@@ -141,15 +166,6 @@ export default function Login() {
                                                     Forgot Password?
                                                 </a>
                                             </div>
-                                            <br />
-
-                                            {errorMsg && (
-                                                <div style={{ textAlign: "center" }} className="alert alert-danger" role="alert">
-                                                    {errorMsg}
-                                                </div>
-                                            )}
-                                            <br />
-                                            <br />
                                         </div>
                                     </div>
                                 </div>

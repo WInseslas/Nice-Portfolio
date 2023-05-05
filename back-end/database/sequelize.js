@@ -32,7 +32,7 @@ db.message = require("../models/message.model")(sequelize, Sequelize)
 
 
 
-db.sequelize.sync({ })
+db.sequelize.sync({})
 	.then(_ => {
 		console.log("The " + process.env.db_name + " database has been synchronized successfully.")
 	})

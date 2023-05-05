@@ -50,7 +50,6 @@ export default function Dashboard() {
   };
   const [data, isLoadingData] = useFetch({ url: apiUrl, options: options });
 
-  // console.log(data)
   useEffect(() => {
     if (data) {
       setMessages(data.data);
@@ -68,7 +67,9 @@ export default function Dashboard() {
         <div id="content-wrapper" className='d-flex flex-column'>
           <div id="content">
             <Navbar messages={messages} isLoading={isLoading} user={currentUser} />
-            <div className="container-fluid"></div>
+            <div className="container-fluid">
+              {currentUser && <p>Bonjour {currentUser.firstname} !</p>}
+            </div>
           </div>
           <Footer />
         </div>

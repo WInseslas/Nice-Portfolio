@@ -9,10 +9,7 @@ module.exports.create = async (req, res) => {
         return res.status(400).json({ message: "Invalid input data format." })
     }
 
-    const messageJson = { name, email, subject, message: msg }
-
-    console.log(req.body)
-    messageTable.create(messageJson)
+    messageTable.create({ name, email, subject, message: msg })
         .then(newMessage => {
             const messageText = `Your message has been successfully sent.`
             res.status(201).json({ message: messageText, data: newMessage })

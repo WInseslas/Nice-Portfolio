@@ -1,13 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
-export default function Sidebar({user}) {
+export default function Sidebar({ user }) {
   // console.log('Sidebar')
+  const handleGoToDashboard = (e) => {
+    e.preventDefault();
+    window.location.href = '/Dashboard';
+  }
+
   return (
     <>
       <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a className="sidebar-brand d-flex align-items-center justify-content-center" style={{ cursor: "pointer" }} onClick={handleGoToDashboard}>
           <div className="sidebar-brand-icon rotate-n-15">
             <i className="fas fa-laugh-wink"></i>
           </div>
